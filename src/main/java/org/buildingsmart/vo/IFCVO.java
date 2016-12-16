@@ -2,6 +2,7 @@ package org.buildingsmart.vo;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 
 /*
@@ -30,13 +31,14 @@ import java.util.Map;
 
 public class IFCVO {
 
-    private Long line_num;
+    private Long lineNum;
     private String fullLineAfterNum;
     private String name = null;
-    private LinkedList<Object> list = new LinkedList<Object>();
-    private Map<String, LinkedList<IFCVO>> inverse_pointer_sets = new HashMap<String, LinkedList<IFCVO>>();
+    private LinkedList<Object> list = new LinkedList<>();
+    private Map<String, LinkedList<IFCVO>> inversePointerSets = new HashMap<>();
 
     public IFCVO() {
+        //default constructor
     }
 
     public String getFullLineAfterNum() {
@@ -47,12 +49,12 @@ public class IFCVO {
         this.fullLineAfterNum = fullLineAfterNum;
     }
 
-    public Long getLine_num() {
-        return line_num;
+    public Long getLineNum() {
+        return lineNum;
     }
 
-    public void setLine_num(Long line_num) {
-        this.line_num = line_num;
+    public void setLineNum(Long lineNum) {
+        this.lineNum = lineNum;
     }
 
     public String getName() {
@@ -63,19 +65,19 @@ public class IFCVO {
         this.name = name;
     }
 
-    public LinkedList<Object> getObjectList() {
+    public List<Object> getObjectList() {
         return list;
     }
 
-    public void setList(LinkedList<Object> list) {
-        this.list = list;
+    public void setList(List<Object> list) {
+        this.list = (LinkedList<Object>) list;
     }
 
-    public Map<String, LinkedList<IFCVO>> getInverse_pointer_sets() {
-        return inverse_pointer_sets;
+    public Map<String, LinkedList<IFCVO>> getInversePointerSets() {
+        return inversePointerSets;
     }
 
-    public void setInverse_pointer_sets(Map<String, LinkedList<IFCVO>> inverse_pointer_sets) {
-        this.inverse_pointer_sets = inverse_pointer_sets;
+    public void setInversePointerSets(Map<String, LinkedList<IFCVO>> inversePointerSets) {
+        this.inversePointerSets = inversePointerSets;
     }
 }

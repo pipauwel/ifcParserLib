@@ -30,17 +30,21 @@ import java.util.Set;
 public class EntityVO implements Serializable {
     private static final long serialVersionUID = -3172893316956350157L;
     private String name;
-    private List<AttributeVO> attributes = new LinkedList<AttributeVO>();
-    private List<InverseVO> inverses = new LinkedList<InverseVO>();
+    private List<AttributeVO> attributes = new LinkedList<>();
+    private List<InverseVO> inverses = new LinkedList<>();
 
-    private List<AttributeVO> derived_attribute_list = new LinkedList<AttributeVO>();
-    private List<InverseVO> derived_inverse_list = new LinkedList<InverseVO>();
+    private List<AttributeVO> derivedAttributeList = new LinkedList<>();
+    private List<InverseVO> derivedInverseList = new LinkedList<>();
 
     private String superclass;
     private boolean abstractsuperclass = false;
     private List<TypeVO> parentSelect;
-    private Set<String> subClassList = new HashSet<String>();
-    private static List<EntityVO> listOfEntities = new ArrayList<EntityVO>();
+    private Set<String> subClassList = new HashSet<>();
+    private static List<EntityVO> listOfEntities = new ArrayList<>();
+
+    public EntityVO() {
+        //default constructor
+    }
 
     public EntityVO(String name) {
         super();
@@ -48,20 +52,20 @@ public class EntityVO implements Serializable {
         listOfEntities.add(this);
     }
 
-    public static EntityVO getEntityVO(String EntityName) {
+    public static EntityVO getEntityVO(String entityName) {
         for (EntityVO e : listOfEntities) {
-            if (e.getName().equalsIgnoreCase(EntityName))
+            if (e.getName().equalsIgnoreCase(entityName))
                 return e;
         }
         return null;
     }
 
-    public List<InverseVO> getDerived_inverse_list() {
-        return derived_inverse_list;
+    public List<InverseVO> getDerivedInverseList() {
+        return derivedInverseList;
     }
 
-    public void setDerived_inverse_list(List<InverseVO> derived_inverse_list) {
-        this.derived_inverse_list = derived_inverse_list;
+    public void setDerivedInverseList(List<InverseVO> derivedInverseList) {
+        this.derivedInverseList = derivedInverseList;
     }
 
     public List<InverseVO> getInverses() {
@@ -72,15 +76,12 @@ public class EntityVO implements Serializable {
         this.inverses = inverses;
     }
 
-    public List<AttributeVO> getDerived_attribute_list() {
-        return derived_attribute_list;
+    public List<AttributeVO> getDerivedAttributeList() {
+        return derivedAttributeList;
     }
 
-    public void setDerived_attribute_list(List<AttributeVO> derived_list) {
-        this.derived_attribute_list = derived_list;
-    }
-
-    public EntityVO() {
+    public void setDerivedAttributeList(List<AttributeVO> derivedList) {
+        this.derivedAttributeList = derivedList;
     }
 
     public List<AttributeVO> getAttributes() {
@@ -105,7 +106,7 @@ public class EntityVO implements Serializable {
 
     public void addParentSelectType(TypeVO parentSelect) {
         if (this.parentSelect == null)
-            this.parentSelect = new ArrayList<TypeVO>();
+            this.parentSelect = new ArrayList<>();
         this.parentSelect.add(parentSelect);
     }
 
@@ -127,8 +128,8 @@ public class EntityVO implements Serializable {
 
     @Override
     public String toString() {
-        return "EntityVO [name=" + name + ", attributes=" + attributes + ", inverses=" + inverses + ", derived_attribute_list=" + derived_attribute_list + ", derived_inverse_list="
-                        + derived_inverse_list + ", superclass=" + superclass + ", abstractsuperclass=" + abstractsuperclass + "]";
+        return "EntityVO [name=" + name + ", attributes=" + attributes + ", inverses=" + inverses + ", derived_attribute_list=" + derivedAttributeList + ", derived_inverse_list="
+                        + derivedInverseList + ", superclass=" + superclass + ", abstractsuperclass=" + abstractsuperclass + "]";
     }
 
     /**
