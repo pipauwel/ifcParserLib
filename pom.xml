@@ -60,6 +60,12 @@
       <name>Pieter Pauwels</name>
       <email>pipauwel [dot] pauwels [at] ugent [dot] be</email>
     </developer>
+	
+    <developer>
+      <id>jyrkio</id>
+      <name>Jyrki Oraskari</name>
+      <email>jyrki [dot] oraskari [at] aalto [dot] fi</email>
+    </developer>
 
     <developer>
       <id>lewismc</id>
