@@ -27,9 +27,7 @@ public class PropertyVO implements Serializable {
     private String originalName;
     private EntityVO domain;
 
-    public enum propertyType {
-        TypeVO, EntityVO, Select
-    };
+    public enum propertyType {TYPEVO, ENTITYVO, SELECT}
 
     private propertyType type;
     private boolean optional = false;
@@ -42,43 +40,17 @@ public class PropertyVO implements Serializable {
     private int maxCardinality = -1;
 
     private boolean listOfList = false;
-    private int minCardinality_listoflist = -1;
-    private int maxCardinality_listoflist = -1;
+    private int minCardinalityListOfList = -1;
+    private int maxCardinalityListOfList = -1;
 
     private PropertyVO inverseProperty = null;
 
-    private List<String> range_selectEntities = null;
+    private transient List<String> rangeSelectEntities = null;
     private String range = null;
-
-    // List<String> ifcClasses = new ArrayList<String>();
-    // public boolean isEntity = false;
-    // String rawtype;
-    // public boolean isEnumeration = false;
-    // List<String> enumeration_list = null;
 
     public PropertyVO() {
         // basic constructor
     }
-
-    // public PropertyVO(String name, boolean isList, boolean isEntity,
-    // String rawtype, boolean isEnumeration, List<String> enumeration_list) {
-    // super();
-    // this.name = name;
-    // this.isList = isList;
-    // this.isEntity = isEntity;
-    // this.rawtype = rawtype;
-    // this.isEnumeration = isEnumeration;
-    // this.enumeration_list = enumeration_list;
-    // }
-    //
-    // public PropertyVO(String name, boolean isList, boolean isEntity,
-    // String rawtype) {
-    // super();
-    // this.name = name;
-    // this.isList = isList;
-    // this.isEntity = isEntity;
-    // this.rawtype = rawtype;
-    // }
 
     public String getName() {
         return name;
@@ -153,11 +125,11 @@ public class PropertyVO implements Serializable {
     }
 
     public List<String> getSelectEntities() {
-        return range_selectEntities;
+        return rangeSelectEntities;
     }
 
     public void setSelectEntities(List<String> selectEntities) {
-        this.range_selectEntities = selectEntities;
+        this.rangeSelectEntities = selectEntities;
     }
 
     public String getRange() {
@@ -184,20 +156,20 @@ public class PropertyVO implements Serializable {
         this.maxCardinality = maxCardinality;
     }
 
-    public int getMinCardinality_listoflist() {
-        return minCardinality_listoflist;
+    public int getMinCardinalityListOfList() {
+        return minCardinalityListOfList;
     }
 
-    public void setMinCardinality_listoflist(int minCardinality_listoflist) {
-        this.minCardinality_listoflist = minCardinality_listoflist;
+    public void setMinCardinalityListOfList(int minCardinalityListOfList) {
+        this.minCardinalityListOfList = minCardinalityListOfList;
     }
 
-    public int getMaxCardinality_listoflist() {
-        return maxCardinality_listoflist;
+    public int getMaxCardinalityListOfList() {
+        return maxCardinalityListOfList;
     }
 
-    public void setMaxCardinality_listoflist(int maxCardinality_listoflist) {
-        this.maxCardinality_listoflist = maxCardinality_listoflist;
+    public void setMaxCardinalityListOfList(int maxCardinalityListOfList) {
+        this.maxCardinalityListOfList = maxCardinalityListOfList;
     }
 
     public PropertyVO getInverseProperty() {
@@ -223,73 +195,5 @@ public class PropertyVO implements Serializable {
     public void setRangeNS(String rangeNS) {
         this.rangeNS = rangeNS;
     }
-
-    // public boolean containsIfcClass(Object o) {
-    // return ifcClasses.contains(o);
-    // }
-    //
-    // public boolean addIfcClass(String e) {
-    // return ifcClasses.add(e);
-    // }
-    //
-    // public List<String> getIfcClasses() {
-    // return ifcClasses;
-    // }
-    //
-    // public void setIfcClasses(List<String> ifcClasses) {
-    // this.ifcClasses = ifcClasses;
-    // }
-    //
-    // public String getIfcClassesAsString() {
-    // StringBuffer sb = new StringBuffer();
-    // for (int n = 0; n < ifcClasses.size(); n++) {
-    // if (n > 0)
-    // sb.append(' ');
-    // sb.append("ifc:" + ifcClasses.get(n));
-    // }
-    // return sb.toString();
-    // }
-
-    // public String getRawtype() {
-    // return rawtype;
-    // }
-    //
-    // public void setRawtype(String rawtype) {
-    // this.rawtype = rawtype;
-    // }
-
-    // public boolean isEntity() {
-    // return isEntity;
-    // }
-    //
-    // public void setEntity(boolean isEntity) {
-    // this.isEntity = isEntity;
-    // }
-
-    // public boolean isEnumeration() {
-    // return isEnumeration;
-    // }
-    //
-    // public void setEnumeration(boolean isEnumeration) {
-    // this.isEnumeration = isEnumeration;
-    // }
-
-    // public List<String> getEnumeration_list() {
-    // return enumeration_list;
-    // }
-
-    // public void setEnumeration_list(List<String> enumeration_list) {
-    // this.enumeration_list = enumeration_list;
-    // }
-
-    // public String getEnumerationsAsString() {
-    // StringBuffer sb = new StringBuffer();
-    // for (int n = 0; n < enumeration_list.size(); n++) {
-    // if (n > 0)
-    // sb.append(' ');
-    // sb.append("ifc:" + enumeration_list.get(n));
-    // }
-    // return sb.toString();
-    // }
 
 }

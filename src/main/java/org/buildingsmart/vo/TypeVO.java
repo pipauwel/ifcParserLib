@@ -27,11 +27,11 @@ public class TypeVO implements Serializable {
     private static final long serialVersionUID = -3366648676376786356L;
     private String name;
     private String primarytype;
-    private List<String> select_entities = new LinkedList<String>();
-    private List<String> enum_entities = new LinkedList<String>();
+    private List<String> selectEntities = new LinkedList<>();
+    private List<String> enumEntities = new LinkedList<>();
     private List<TypeVO> parentSelect;
     private int[] listCardinalities = new int[2];
-    private static List<TypeVO> listOfTypes = new ArrayList<TypeVO>();
+    private static List<TypeVO> listOfTypes = new ArrayList<>();
 
     public TypeVO(String name) {
         super();
@@ -47,9 +47,9 @@ public class TypeVO implements Serializable {
         listOfTypes.add(this);
     }
 
-    public static TypeVO getTypeVO(String TypeName) {
+    public static TypeVO getTypeVO(String typeName) {
         for (TypeVO t : listOfTypes) {
-            if (t.getName().equalsIgnoreCase(TypeName))
+            if (t.getName().equalsIgnoreCase(typeName))
                 return t;
         }
         return null;
@@ -63,12 +63,12 @@ public class TypeVO implements Serializable {
         this.name = name;
     }
 
-    public List<String> getSelect_entities() {
-        return select_entities;
+    public List<String> getSelectEntities() {
+        return selectEntities;
     }
 
-    public void setSelect_entities(List<String> select_entities) {
-        this.select_entities = select_entities;
+    public void setSelectEntities(List<String> selectEntities) {
+        this.selectEntities = selectEntities;
     }
 
     public List<TypeVO> getParentSelectTypes() {
@@ -77,7 +77,7 @@ public class TypeVO implements Serializable {
 
     public void addParentSelectType(TypeVO parentSelect) {
         if (this.parentSelect == null)
-            this.parentSelect = new ArrayList<TypeVO>();
+            this.parentSelect = new ArrayList<>();
         this.parentSelect.add(parentSelect);
     }
 
@@ -89,12 +89,12 @@ public class TypeVO implements Serializable {
         this.primarytype = primarytype;
     }
 
-    public List<String> getEnum_entities() {
-        return enum_entities;
+    public List<String> getEnumEntities() {
+        return enumEntities;
     }
 
-    public void setEnum_entities(List<String> enum_entities) {
-        this.enum_entities = enum_entities;
+    public void setEnumEntities(List<String> enumEntities) {
+        this.enumEntities = enumEntities;
     }
 
     public int[] getListCardinalities() {
@@ -115,6 +115,6 @@ public class TypeVO implements Serializable {
 
     @Override
     public String toString() {
-        return "TypeVO [name=" + name + ", primarytype=" + primarytype + ", select_entities=" + select_entities + ", enum_entities=" + enum_entities + "]";
+        return "TypeVO [name=" + name + ", primarytype=" + primarytype + ", select_entities=" + selectEntities + ", enum_entities=" + enumEntities + "]";
     }
 }

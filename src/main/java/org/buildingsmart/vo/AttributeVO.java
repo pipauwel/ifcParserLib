@@ -35,31 +35,31 @@ public class AttributeVO implements Serializable {
     private boolean optional = false;
 
     private boolean listOfList = false;
-    private int minCard_listoflist = -1;
-    private int maxCard_listoflist = -1;
+    private int minCardListOfList = -1;
+    private int maxCardListOfList = -1;
 
     private TypeVO type;
     boolean unique = false;
-    private boolean reverse_pointer; // defined in another class
+    private boolean reversePointer; // defined in another class
     boolean isOne2One = false;
 
-    private InverseVO points_from;
+    private InverseVO pointsFrom;
 
-    public AttributeVO(String name, TypeVO type, boolean is_array, boolean is_set, boolean is_list, boolean is_listoflist, int minCard, int maxCard, int tmp_listoflist_mincard,
-                    int tmp_listoflist_maxcard, boolean is_optional) {
+    public AttributeVO(String name, TypeVO type, boolean isArray, boolean isSet, boolean isList, boolean isListOfList, int minCard, int maxCard, int tmpListOfListMinCard,
+                    int tmpListOfListMaxCard, boolean isOptional) {
         super();
         this.name = name;
         this.type = type;
-        this.reverse_pointer = false;
-        this.array = is_array;
-        this.set = is_set;
-        this.list = is_list;
+        this.reversePointer = false;
+        this.array = isArray;
+        this.set = isSet;
+        this.list = isList;
         this.setMinCard(minCard);
         this.setMaxCard(maxCard);
-        this.setOptional(is_optional);
-        this.setListOfList(is_listoflist);
-        this.setMinCard_listoflist(tmp_listoflist_mincard);
-        this.setMaxCard_listoflist(tmp_listoflist_maxcard);
+        this.setOptional(isOptional);
+        this.setListOfList(isListOfList);
+        this.setMinCardListOfList(tmpListOfListMinCard);
+        this.setMaxCardListOfList(tmpListOfListMaxCard);
     }
 
     public boolean isArray() {
@@ -110,20 +110,20 @@ public class AttributeVO implements Serializable {
         this.maxCard = maxCard;
     }
 
-    public int getMinCard_listoflist() {
-        return minCard_listoflist;
+    public int getMinCardListOfList() {
+        return minCardListOfList;
     }
 
-    public void setMinCard_listoflist(int minCard_listoflist) {
-        this.minCard_listoflist = minCard_listoflist;
+    public void setMinCardListOfList(int minCardListOfList) {
+        this.minCardListOfList = minCardListOfList;
     }
 
-    public int getMaxCard_listoflist() {
-        return maxCard_listoflist;
+    public int getMaxCardListOfList() {
+        return maxCardListOfList;
     }
 
-    public void setMaxCard_listoflist(int maxCard_listoflist) {
-        this.maxCard_listoflist = maxCard_listoflist;
+    public void setMaxCardListOfList(int maxCardListOfList) {
+        this.maxCardListOfList = maxCardListOfList;
     }
 
     public boolean isOptional() {
@@ -162,20 +162,20 @@ public class AttributeVO implements Serializable {
         this.type = type;
     }
 
-    public boolean isReverse_pointer() {
-        return reverse_pointer;
+    public boolean isReversePointer() {
+        return reversePointer;
     }
 
-    public void setReverse_pointer(boolean reverse_pointer) {
-        this.reverse_pointer = reverse_pointer;
+    public void setReversePointer(boolean reversePointer) {
+        this.reversePointer = reversePointer;
     }
 
-    public InverseVO getPoints_from() {
-        return points_from;
+    public InverseVO getPointsFrom() {
+        return pointsFrom;
     }
 
-    public void setPoints_from(InverseVO points_from) {
-        this.points_from = points_from;
+    public void setPointsFrom(InverseVO pointsFrom) {
+        this.pointsFrom = pointsFrom;
     }
 
     public boolean isUnique() {
@@ -204,7 +204,8 @@ public class AttributeVO implements Serializable {
 
     @Override
     public String toString() {
-        return "AttributeVO [name=" + name + ", type=" + type + ", reverse_pointer=" + reverse_pointer + ", points_from=" + points_from + ", set=" + set + "]";
+        return "AttributeVO [name=" + name + ", type=" + type + ", reverse_pointer=" + reversePointer 
+                + ", points_from=" + pointsFrom + ", set=" + set + "]";
     }
 
     public String getRangeNS() {
