@@ -16,7 +16,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
-package org.buildingsmart.vo;
+package org.openbimstandards.vo;
 
 import java.io.Serializable;
 
@@ -71,6 +71,10 @@ public class InverseVO implements Serializable {
 
     public void setInverseOfProperty(String inverseOfProperty) {
         this.inverseOfProperty = inverseOfProperty;
+    }
+
+    public String getLowerCaseName() {
+        return Character.toLowerCase(name.charAt(0)) + name.substring(1);
     }
 
     public boolean isUnique() {
