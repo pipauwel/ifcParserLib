@@ -27,7 +27,9 @@ public class PropertyVO implements Serializable {
     private String originalName;
     private EntityVO domain;
 
-    public enum propertyType {TYPEVO, ENTITYVO, SELECT}
+    public enum propertyType {
+        TYPEVO, ENTITYVO, SELECT
+    }
 
     private propertyType type;
     private boolean optional = false;

@@ -45,8 +45,8 @@ public class AttributeVO implements Serializable {
 
     private InverseVO pointsFrom;
 
-    public AttributeVO(String name, TypeVO type, boolean isArray, boolean isSet, boolean isList, boolean isListOfList, int minCard, int maxCard, int tmpListOfListMinCard,
-                    int tmpListOfListMaxCard, boolean isOptional) {
+    public AttributeVO(String name, TypeVO type, boolean isArray, boolean isSet, boolean isList, boolean isListOfList, int minCard, int maxCard, int tmpListOfListMinCard, int tmpListOfListMaxCard,
+                    boolean isOptional) {
         super();
         this.name = name;
         this.type = type;
@@ -204,8 +204,7 @@ public class AttributeVO implements Serializable {
 
     @Override
     public String toString() {
-        return "AttributeVO [name=" + name + ", type=" + type + ", reverse_pointer=" + reversePointer 
-                + ", points_from=" + pointsFrom + ", set=" + set + "]";
+        return "AttributeVO [name=" + name + ", type=" + type + ", reverse_pointer=" + reversePointer + ", points_from=" + pointsFrom + ", set=" + set + "]";
     }
 
     public String getRangeNS() {
