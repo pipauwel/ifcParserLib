@@ -12,7 +12,7 @@
   <artifactId>ifcParserLib</artifactId>
   <name>IFC Parser Library</name>
   <packaging>jar</packaging>
-  <version>0.1</version>
+  <version>0.1-SNAPSHOT</version>
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
@@ -28,7 +28,7 @@
 
   <scm>
     <url>https://github.com/pipauwel/ifcParserLib</url>
-    <connection>scm:git:git://github.com/pipauwel/ifcParserLib.git</connection>
+    <connection>scm:git:git@github.com/pipauwel/ifcParserLib.git</connection>
     <developerConnection>scm:git:git@github.com:pipauwel/ifcParserLib.git</developerConnection>
     <tag>ifcParserLib-0.1</tag>
   </scm>
@@ -37,7 +37,8 @@
     <repository>
       <id>sonatype-nexus-staging</id>
       <name>Nexus Staging Repository</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+	  <url>http://localhost:8081/repository/maven-releases/</url>
+      <!--<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>-->
     </repository>
   </distributionManagement>
 
