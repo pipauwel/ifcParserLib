@@ -13,7 +13,7 @@
   <artifactId>ifcParserLib</artifactId>
   <name>IFC Parser Library</name>
   <packaging>jar</packaging>
-  <version>0.1</version>
+  <version>0.2</version>
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
@@ -29,7 +29,7 @@
 
   <scm>
     <url>https://github.com/pipauwel/ifcParserLib</url>
-    <connection>scm:git:git://github.com/pipauwel/ifcParserLib.git</connection>
+    <connection>scm:git:git@github.com/pipauwel/ifcParserLib.git</connection>
     <developerConnection>scm:git:git@github.com:pipauwel/ifcParserLib.git</developerConnection>
     <tag>HEAD</tag>
   </scm>
