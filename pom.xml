@@ -30,15 +30,14 @@
     <url>https://github.com/pipauwel/ifcParserLib</url>
     <connection>scm:git:git@github.com/pipauwel/ifcParserLib.git</connection>
     <developerConnection>scm:git:git@github.com:pipauwel/ifcParserLib.git</developerConnection>
-    <tag>ifcParserLib-0.1</tag>
+    <tag>ifcParserLib-0.2</tag>
   </scm>
 
   <distributionManagement>
     <repository>
       <id>sonatype-nexus-staging</id>
       <name>Nexus Staging Repository</name>
-	  <url>http://localhost:8081/repository/maven-releases/</url>
-      <!--<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>-->
+	  <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
     </repository>
   </distributionManagement>
 
