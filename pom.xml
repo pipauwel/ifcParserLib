@@ -297,7 +297,7 @@
   <properties>
     <!-- Dependencies -->
 
-    <junit.version>4.7</junit.version>
+    <junit.version>4.13.1</junit.version>
 
     <!-- Maven Plugin Dependencies -->
     <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
